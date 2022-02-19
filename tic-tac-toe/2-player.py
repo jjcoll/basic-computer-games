@@ -3,13 +3,10 @@ r2 = ['4', '5', '6']
 r3 = ['7', '8', '9']
 
 def winner(r1, r2, r3, p):
-    # look at making this with for loop
-    if len(set(r1)) == 1:
-        return True
-    if len(set(r2)) == 1:
-        return True    
-    if len(set(r3)) == 1:
-        return True
+    # loop through a tupple of options -- horizontal solutions
+    for r in (r1, r2, r3):
+        if len(set(r)) == 1:
+            return True
     # vertical 3 in a row
     for i in range(0, 3):
         if len(set([r1[i], r2[i], r3[i]])) == 1:
